@@ -142,6 +142,7 @@ export default createComponent({
 
     getValues() {
       return this.fields.reduce((form, field) => {
+        if (field.name) { continue }
         form[field.name] = field.formValue;
         return form;
       }, {});
